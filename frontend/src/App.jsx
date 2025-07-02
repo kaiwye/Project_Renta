@@ -1,37 +1,43 @@
 import { Route, Routes } from "react-router";
 import Layout from "./layout/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./auth/Login";
-import Register from "./auth/Register";
-import Announcements from "./pages/Announcements/Announcements";
-import Payments from "./pages/Payments/Payments";
-import Ledger from "./pages/Payments/Ledger";
-import Profile from "./pages/Profile/Profile";
-import Maintenance from "./pages/Maintenance/Maintenance";
-import ResidentDashboard from "./pages/ResidentDashboard/ResidentDashboard";
+
 import LandingPage from "./pages/LandingPage/LandingPage";
 import About from "./pages/About/About";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+
+import ResidentDashboard from "./pages/ResidentDashboard/ResidentDashboard";
+import Profile from "./pages/Profile/Profile";
+import Payments from "./pages/Payments/Payments";
+import Ledger from "./pages/Payments/Ledger";
+import Maintenance from "./pages/Maintenance/Maintenance";
+import Announcements from "./pages/Announcements/Announcements";
+
 import ManagerDashboard from "./pages/ManagerDashboard/ManagerDashboard";
 import ManagePropertyInfo from "./pages/ManagePropertyInfo/ManagePropertyInfo";
-import ManageUnits from "./pages/ManageUnits/ManageUnits";
-import ManageResidents from "./pages/ManageResidents/ManageResidents";
-import ManagePayments from "./pages/ManagePayments/ManagePayments";
-import ManageUtilities from "./pages/ManageUtilities/ManageUtilities";
-import ManageMaintenance from "./pages/ManageMaintenance/ManageMaintenance";
-import ManageAnnouncements from "./pages/ManageAnnouncements/ManageAnnouncements";
 import AddPropertyForm from "./pages/ManagePropertyInfo/AddPropertyForm";
 import EditPropertyForm from "./pages/ManagePropertyInfo/EditPropertyForm";
-import ManageSettings from "./pages/ManageUtilities/ManageSettings";
-import ManageTenantLedger from "./pages/ManagePayments/ManageTenantLedger";
+import ManageUnits from "./pages/ManageUnits/ManageUnits";
 import AddUnitForm from "./pages/ManageUnits/AddUnitForm";
 import EditUnitForm from "./pages/ManageUnits/EditUnitForm";
+
+import ManageResidents from "./pages/ManageResidents/ManageResidents";
+import ViewResident from "./pages/ManageResidents/ViewResident";
 import AddResidentForm from "./pages/ManageResidents/AddResidentForm";
 import EditResidentForm from "./pages/ManageResidents/EditResidentForm";
-import ViewResident from "./pages/ManageResidents/ViewResident";
+
+import ManageUsers from "./pages/ManageUsers/ManageUsers";
+import ManagePayments from "./pages/ManagePayments/ManagePayments";
+import ManageUtilities from "./pages/ManageUtilities/ManageUtilities";
+import ManageRates from "./pages/ManageUtilities/ManageRates";
+import ManageMaintenance from "./pages/ManageMaintenance/ManageMaintenance";
+import ManageAnnouncements from "./pages/ManageAnnouncements/ManageAnnouncements";
+import ManageTenantLedger from "./pages/ManagePayments/ManageTenantLedger";
+
 import Contact from "./pages/Contact/Contact";
 import Error404 from "./Error404";
 import LandingPageLayout from "./layout/LandingPageLayout";
-import ManageUsers from "./pages/ManageUsers/ManageUsers";
 
 export default function App() {
   return (
@@ -197,33 +203,23 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/admin">
-          <Route
-            path="settings"
-            element={
-              <ProtectedRoute requireManager={true}>
-                <ManageSettings />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="ledger/:userId"
-            element={
-              <ProtectedRoute requireManager={true}>
-                <ManageTenantLedger />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="maintenance"
-            element={
-              <ProtectedRoute>
-                <ManageMaintenance />
-              </ProtectedRoute>
-            }
-          />
-        </Route>
-        <Route path="*" element={<Error404 />} />
+        <Route
+          path="/admin/rates"
+          element={
+            <ProtectedRoute requireManager={true}>
+              <ManageRates />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="ledger/:userId"
+          element={
+            <ProtectedRoute requireManager={true}>
+              <ManageTenantLedger />
+            </ProtectedRoute>
+          }
+        />
+      <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
   );

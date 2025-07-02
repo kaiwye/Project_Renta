@@ -1,15 +1,15 @@
-// frontend/src/pages/ManagerSettings/ManagerSettings.jsx
+// frontend/src/pages/ManagerRates/ManagerRates.jsx
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useQuery from "../../api/useQuery";
 import { useApi } from "../../api/ApiContext";
-import styles from "./ManageSettings.module.css";
+import styles from "./ManageRates.module.css";
 
-export default function ManagerSettings() {
+export default function ManagerRates() {
   const navigate = useNavigate();
   const { request, invalidateTags } = useApi();
-  const { data: settings, loading } = useQuery("/settings", "settings");
+  const { data: rates, loading } = useQuery("/rates", "rates");
 
   const [formState, setFormState] = useState({
     rate_water: "",
@@ -20,14 +20,14 @@ export default function ManagerSettings() {
   const [message, setMessage] = useState({ type: "", text: "" });
 
   useEffect(() => {
-    if (settings) {
+    if (rates) {
       setFormState({
-        rate_water: settings.rate_water || "",
-        rate_electric: settings.rate_electric || "",
-        rate_gas: settings.rate_gas || "",
+        rate_water: rates.rate_water || "",
+        rate_electric: rates.rate_electric || "",
+        rate_gas: rates.rate_gas || "",
       });
     }
-  }, [settings]);
+  }, [rates]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,16 +43,16 @@ export default function ManagerSettings() {
     setMessage({ type: "", text: "" });
 
     try {
-      await request("/settings", {
+      await request("/rates", {
         method: "PUT",
         body: JSON.stringify(formState),
       });
 
       setMessage({
         type: "success",
-        text: "Settings updated successfully! Redirecting...",
+        text: "Rates updated successfully! Redirecting...",
       });
-      invalidateTags(["settings"]);
+      invalidateTags(["rates"]);
 
       setTimeout(() => {
         navigate("/admin/utilities");
@@ -60,13 +60,13 @@ export default function ManagerSettings() {
     } catch (error) {
       setMessage({
         type: "error",
-        text: `Failed to update settings: ${error.message}`,
+        text: `Failed to update rates: ${error.message}`,
       });
       setIsSubmitting(false);
     }
   };
 
-  if (loading) return <p>Loading settings...</p>;
+  if (loading) return <p>Loading Rates...</p>;
 
   return (
     <div className={styles.page}>
@@ -124,7 +124,7 @@ export default function ManagerSettings() {
                 className={styles.primaryButton}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Saving..." : "Save Settings"}
+                {isSubmitting ? "Saving..." : "Save Rates"}
               </button>
             </div>
             {message.text && (

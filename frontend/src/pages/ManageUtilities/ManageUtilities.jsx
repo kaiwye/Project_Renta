@@ -6,7 +6,7 @@ import useQuery from "../../api/useQuery";
 import { useApi } from "../../api/ApiContext";
 import styles from "./ManageUtilities.module.css";
 
-export default function ManagerUtilities() {
+export default function ManageUtilities() {
   const navigate = useNavigate();
   const { request } = useApi();
   const { data: units, loading: loadingUnits } = useQuery("/units", "units");
@@ -118,7 +118,7 @@ export default function ManagerUtilities() {
             </p>
             <button
               className={styles.secondaryButton}
-              onClick={() => navigate("/admin/settings")}
+              onClick={() => navigate("/admin/rates")}
             >
               Manage Rates
             </button>
