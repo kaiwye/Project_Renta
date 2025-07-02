@@ -42,184 +42,54 @@ import LandingPageLayout from "./layout/LandingPageLayout";
 export default function App() {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route element={<LandingPageLayout />}>
         <Route index element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Route>
+
+      {/* Protected Routes */}
       <Route element={<Layout />}>
-        <Route path="/dashboard">
-          <Route
-            path="resident"
-            element={
-              <ProtectedRoute>
-                <ResidentDashboard />
-              </ProtectedRoute>
-            }
-          />
+
+        {/* Resident Routes */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/resident/dashboard" element={<ResidentDashboard />} />
+          <Route path="/payment" element={<Payments />} />
+          <Route path="/ledger" element={<Ledger />} />
+          <Route path="/maintenance" element={<Maintenance />} />
+          <Route path="/announcements" element={<Announcements />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
-        <Route
-          path="/payments"
-          element={
-            <ProtectedRoute>
-              <Payments />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/ledger"
-          element={
-            <ProtectedRoute>
-              <Ledger />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/maintenance"
-          element={
-            <ProtectedRoute>
-              <Maintenance />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/announcements"
-          element={
-            <ProtectedRoute>
-              <Announcements />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <ProtectedRoute>
-              <Contact />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManagerDashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/propertyinfo"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManagePropertyInfo />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/addproperty"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <AddPropertyForm />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/editproperty/:id"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <EditPropertyForm />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/units"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageUnits />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/addunit"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <AddUnitForm />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/editunit/:id"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <EditUnitForm />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/manage-users"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageUsers />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/payments"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManagePayments />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/utilities"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageUtilities />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/maintenance"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageMaintenance />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/announcements"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageAnnouncements />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/rates"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageRates />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="ledger/:userId"
-          element={
-            <ProtectedRoute requireManager={true}>
-              <ManageTenantLedger />
-            </ProtectedRoute>
-          }
-        />
-      <Route path="*" element={<Error404 />} />
+
+        {/* Admin Routes */}
+        <Route element={<ProtectedRoute requireManager={true} />}>
+          <Route path="/admin/dashboard" element={<ManagerDashboard />} />
+          <Route path="/admin/propertyinfo" element={<ManagePropertyInfo />} />
+          <Route path="/admin/addproperty" element={<AddPropertyForm />} />
+          <Route
+            path="/admin/editproperty/:id"
+            element={<EditPropertyForm />}
+          />
+          <Route path="/admin/units" element={<ManageUnits />} />
+          <Route path="/admin/addunit" element={<AddUnitForm />} />
+          <Route path="/admin/editunit/:id" element={<EditUnitForm />} />
+          <Route path="/admin/manage-users" element={<ManageUsers />} />
+          <Route path="/admin/payments" element={<ManagePayments />} />
+          <Route path="/admin/utilities" element={<ManageUtilities />} />
+          <Route path="/admin/maintenance" element={<ManageMaintenance />} />
+          <Route
+            path="/admin/announcements"
+            element={<ManageAnnouncements />}
+          />
+          <Route path="/admin/rates" element={<ManageRates />} />
+          <Route path="/ledger/:userId" element={<ManageTenantLedger />} />
+        </Route>
+
+        <Route path="*" element={<Error404 />} />
+
       </Route>
     </Routes>
   );

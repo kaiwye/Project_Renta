@@ -21,7 +21,7 @@ export default function Login() {
       if (loggedInUser.is_manager) {
         navigate("/admin/dashboard");
       } else {
-        navigate("/dashboard/resident");
+        navigate("/resident/dashboard");
       }
     } catch (e) {
       setError(e.message);
