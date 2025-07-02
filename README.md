@@ -1,3 +1,3 @@
-Welcome to our Capstone!
+Welcome to Project Renta!
 
-This project is presented by Bram, Matthew, Aidan, Kai and Timothee!
+This project was created by Bram , Matthew, Aidan, Kai and Timothee!

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useUsers } from "../../Context/UsersContext";
+import { useUsers } from "../../context/UsersContext";
 import styles from "./ManageUsers.module.css";
 
 export default function EditUserForm({

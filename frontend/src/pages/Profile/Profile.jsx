@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../auth/AuthContext";
 import { API } from "../../api/ApiContext";
-import "./profile.css";
+import "./Profile.css";
 import styles from "./Profile.module.css";
 
 export default function Profile() {

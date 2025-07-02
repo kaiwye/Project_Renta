@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useUsers } from "../../Context/UsersContext";
+import { useUsers } from "../../context/UsersContext";
 import { useApi } from "../../api/ApiContext";
 import EditUserForm from "./EditUserForm";
 import styles from "./ManageUsers.module.css";

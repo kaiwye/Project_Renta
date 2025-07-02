@@ -217,7 +217,7 @@ export default function App() {
           <Route
             path="maintenance"
             element={
-              <ProtectedRoute requireManager={true}>
+              <ProtectedRoute>
                 <ManageMaintenance />
               </ProtectedRoute>
             }
