@@ -12,7 +12,7 @@ function ResidentNav({ logout }) {
         </NavLink>
       </div>
       <div className={styles.NavLinks}>
-        <NavLink to="/dashboard/resident" className={styles.links}>
+        <NavLink to="/resident/dashboard" className={styles.links}>
           <ion-icon name="apps-outline"></ion-icon>
           Dashboard
         </NavLink>

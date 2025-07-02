@@ -52,11 +52,10 @@ export default function App() {
 
       {/* Protected Routes */}
       <Route element={<Layout />}>
-
         {/* Resident Routes */}
         <Route element={<ProtectedRoute />}>
           <Route path="/resident/dashboard" element={<ResidentDashboard />} />
-          <Route path="/payment" element={<Payments />} />
+          <Route path="/payments" element={<Payments />} />
           <Route path="/ledger" element={<Ledger />} />
           <Route path="/maintenance" element={<Maintenance />} />
           <Route path="/announcements" element={<Announcements />} />
@@ -89,7 +88,6 @@ export default function App() {
         </Route>
 
         <Route path="*" element={<Error404 />} />
-
       </Route>
     </Routes>
   );
