@@ -113,3 +113,8 @@ npm run dev
 ```
 
 ---
+
+## Contact
+
+Built by Kai Wui Ye. Feel free to connect with me via [LinkedIn](www.linkedin.com/in/kaiwye)
+
