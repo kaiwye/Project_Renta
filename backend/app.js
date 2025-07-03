@@ -30,7 +30,7 @@ app.use(cors(corsOptions));
 
 // The Stripe router is mounted BEFORE express.json() to allow the webhook
 // to receive the raw request body for signature verification.
-app.use("/stripe_payments", stripePaymentRouter);
+app.use("/api/stripe", stripePaymentRouter);
 
 app.use(express.json());
 app.use(limiter);

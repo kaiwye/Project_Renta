@@ -45,7 +45,7 @@ export default function Payments() {
   const handleMakePayment = async () => {
     try {
       const { clientSecret: secret } = await request(
-        "/stripe_payments/create-payment",
+        "/api/stripe/create-payment",
         { method: "POST" }
       );
       setClientSecret(secret);
