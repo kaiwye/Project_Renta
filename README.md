@@ -15,13 +15,12 @@ This web app was produced to help tenants and propety managers streamline commun
 **Tenants can submit maintenance requests and view announcements**
 <br>
 <img src="https://github.com/user-attachments/assets/efc50e3a-cb84-4482-8706-31117022c791" alt="Maintenance" width="75%"/>
-</div>
 
 <br>
 
 **Property managers can manage their tenants/units, edit/complete maintenance requests, and approve/deny announcements**
 <br>
-  <img src="https://github.com/user-attachments/assets/fab80cd5-a432-488b-9bcd-23ce7347b024" alt="Announcements" width="75%"/>
+<img src="https://github.com/user-attachments/assets/fab80cd5-a432-488b-9bcd-23ce7347b024" alt="Announcements" width="75%"/>
 
 <br>
 
@@ -31,18 +30,76 @@ This web app was produced to help tenants and propety managers streamline commun
 
 ## Getting Started
 
-**Live Demo**: [Project Renta](https://property-management-capstone.netlify.app)
+### Live Demo: [Project Renta](https://property-management-capstone.netlify.app)
 
 Feel free to create your own test account or use these test accounts for exploration!
 
 ### Tenant
 Username: user1
+<br>
 Password: password1
 
 ### Manager
 Username: manager1
+<br>
 Password: password1
 
 ## Installation
-1. Clone the repo
-2. 
+
+For running Project Renta locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/project-renta.git
+cd project-renta
+```
+
+### 2. Set up your Environment Variables
+
+```bash
+cd backend
+cp exmaple.env .env
+```
+With your new .env file, replace the pre-existing values with your own:
+- PostgreSQL connection string
+- JWT Secret
+- Stripe Secret Key and Webhook Secret
+- Cloudinary Credentials (Image Uploads)
+
+```bash
+cd ../frontend
+cp exmaple.env .env
+```
+Update the .env files with:
+VITE_API_URL: Your backend API URL
+VITE_STRIPE_PUBLISHABLE_KEY: Your Stripe test publishable key
+
+### 3. Install Dependencies
+
+Frontend
+```bash
+cd frontend
+npm install
+```
+
+Backend
+```bash
+cd ../backend
+npm install
+```
+
+### 4. Run the App!
+
+Backend (Port 8000)
+```bash
+npm run dev
+```
+
+Frontend (Port 5173)
+```bash
+cd frontend
+npm run dev
+```
+
+
