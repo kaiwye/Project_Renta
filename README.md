@@ -4,6 +4,15 @@
 
 This web app was produced to help tenants and propety managers streamline communication and operations. We've designed a seamless property management system that allows for seamless rent/utility payments, easy submissions of maintenance requests, and community building through announcements.
 
+## Tech Stack
+- React (Vite)
+- Express.js
+- PostgreSQL
+- Stripe API
+- Cloudinary (image hosting)
+- Multer (file uploads)
+- Node.js
+
 ## Key Features
 
 **Secure authentication and role-based access**
@@ -59,9 +68,9 @@ cd project-renta
 
 ```bash
 cd backend
-cp exmaple.env .env
+cp example.env .env
 ```
-With your new .env file, replace the pre-existing values with your own:
+Open .env and replace the pre-existing values with your own:
 - PostgreSQL connection string
 - JWT Secret
 - Stripe Secret Key and Webhook Secret
@@ -71,9 +80,9 @@ With your new .env file, replace the pre-existing values with your own:
 cd ../frontend
 cp exmaple.env .env
 ```
-Update the .env files with:
-VITE_API_URL: Your backend API URL
-VITE_STRIPE_PUBLISHABLE_KEY: Your Stripe test publishable key
+Update the .env file with:
+- VITE_API_URL: Your backend API URL
+- VITE_STRIPE_PUBLISHABLE_KEY: Your Stripe test publishable key
 
 ### 3. Install Dependencies
 
@@ -97,9 +106,10 @@ npm run dev
 ```
 
 Frontend (Port 5173)
+Open a new terminal tab and run:
 ```bash
 cd frontend
 npm run dev
 ```
 
-
+---
