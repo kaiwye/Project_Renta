@@ -1,3 +1,25 @@
-Welcome to [Project Renta!](https://project-renta.netlify.app/)
+Welcome to Project Renta!
 
-This project was created by Bram , Matthew, Aidan, Kai and Timothee!
+This web app was produced to help tenants and propety managers streamline communication and operations. We've designed a seamless property management system that allows for seamless rent/utility payments, easy submissions of maintenance requests, and community building through announcements.
+
+Key Features
+- Secure authentication and role-based access
+- Tenants can submit maintenance requests and view announcements
+- Property managers can manage their tenants/units, edit/complete maintenance requests, and approve/deny announcements
+- Payments via Stripe
+
+Getting Started
+
+**Live Demo**:
+[Project Renta](https://property-management-capstone.netlify.app)
+
+Feel free to create your own test account or use these test accounts for exploration!
+
+Tenant
+Username: user1
+Password: password1
+
+Manager:
+Username: manager1
+Password: password1
+
