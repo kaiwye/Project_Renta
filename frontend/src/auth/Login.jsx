@@ -6,14 +6,18 @@ import { useAuth } from "./AuthContext";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {
-  const { login, user } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   const onLogin = async (formData) => {
     const username = formData.get("username");
     const password = formData.get("password");
+
+    setError(null);
+    setLoading(true);
 
     try {
       const loggedInUser = await login({ username, password });
@@ -25,6 +29,8 @@ export default function Login() {
       }
     } catch (e) {
       setError(e.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -35,14 +41,16 @@ export default function Login() {
           <h1>Login</h1>
           <form action={onLogin}>
             <label>
-              <strong>Username: </strong>
+              <span>Username: </span>
               <input type="username" name="username" required />
             </label>
             <label>
-              <strong>Password: </strong>
+              <span>Password: </span>
               <input type="password" name="password" required />
             </label>
-            <button>Login</button>
+            <button disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
+            </button>
             {error && <output>{error}</output>}
           </form>
           <Link to="/register">Need an account? Register here.</Link>
