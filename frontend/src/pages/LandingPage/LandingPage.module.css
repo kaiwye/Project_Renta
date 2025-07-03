@@ -44,7 +44,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
 
-  height: 70vh;
+  /* height: 70vh; */
   padding: 5rem 10%;
   margin: 0 auto;
 }
@@ -85,9 +85,9 @@
   flex-direction: column;
   gap: 2rem;
 
-  height: 30vh;
+  /* height: 30vh; */
   padding: 0 10%;
-  margin: 0 auto;
+  margin: 0 auto 5rem;
 }
 .reviewCards {
   display: grid;
@@ -114,21 +114,17 @@
 /* --- CTA SECTION --- */
 .cta {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-
-  height: 10vh;
-  padding: 0 10%;
+  padding: 1rem 10%;
   margin: 0 auto;
-
   background-color: var(--color-offwhite);
 }
-.cta button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+.cta h2{
+  margin-top: 1.5rem;
+}
+
+.cta button {
   width: 10rem;
   padding: 1rem 3rem;
   border: 0px;

@@ -102,7 +102,7 @@ export default function LandingPage() {
         <button
           onClick={() => navigate(token ? "/resident/dashboard" : "/register")}
         >
-          {token ? "Dashboard" : "Register Now"}
+          {token ? "Dashboard" : "Get Started!"}
         </button>
       </div>
     </div>
