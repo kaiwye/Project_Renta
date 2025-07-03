@@ -2,14 +2,16 @@
 
 ---
 
-#Welcome to Project Renta!
+# Welcome to Project Renta!
 
 ---
+
 This web app was produced to help tenants and propety managers streamline communication and operations. We've designed a seamless property management system that allows for seamless rent/utility payments, easy submissions of maintenance requests, and community building through announcements.
+
 ---
 
-##Key Features
----
+## Key Features
+
 Secure authentication and role-based access
 ![ManagerDashboard](https://github.com/user-attachments/assets/b92ba5b8-ced7-4123-8ba2-9a9e4c2ef29f)
 
@@ -24,25 +26,24 @@ Payments via Stripe
 
 ---
 
-##Getting Started
+## Getting Started
 
 ---
 
-**Live Demo**:
-[Project Renta](https://property-management-capstone.netlify.app)
+**Live Demo**: [Project Renta](https://property-management-capstone.netlify.app)
 
 Feel free to create your own test account or use these test accounts for exploration!
 
-Tenant
+### Tenant
 Username: user1
 Password: password1
 
-Manager
+### Manager
 Username: manager1
 Password: password1
 
 ---
 
-Installation:
+## Installation
 1. Clone the repo
 2. 
