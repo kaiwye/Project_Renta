@@ -1,10 +1,8 @@
-![renta-logo](https://github.com/user-attachments/assets/3bc2ccdd-8616-4984-82c6-ea50016c52be)
+<img src="https://github.com/user-attachments/assets/3bc2ccdd-8616-4984-82c6-ea50016c52be" alt="renta-logo" width="200"/>
 
 ---
 
 # Welcome to Project Renta!
-
----
 
 This web app was produced to help tenants and propety managers streamline communication and operations. We've designed a seamless property management system that allows for seamless rent/utility payments, easy submissions of maintenance requests, and community building through announcements.
 
