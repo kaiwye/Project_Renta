@@ -46,6 +46,7 @@
 .loginForm button:hover {
   background-color: var(--primary-color);
   color: var(--color-white);
+  cursor: pointer;
 }
 
 .loginForm button[disabled] {

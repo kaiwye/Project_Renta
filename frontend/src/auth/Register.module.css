@@ -45,6 +45,7 @@
 .registerForm button:hover {
   background-color: var(--primary-color);
   color: var(--color-white);
+  cursor: pointer;
 }
 
 .registerForm button[disabled] {
