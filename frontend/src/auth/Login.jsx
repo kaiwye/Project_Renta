@@ -10,7 +10,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const onLogin = async (formData) => {
     const username = formData.get("username");
