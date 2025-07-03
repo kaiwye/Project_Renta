@@ -1,9 +1,11 @@
 import styles from "./LandingPage.module.css";
 import featuresImage from "../../assets/features-image.jpg";
 import personCircleOutline from "../../assets/person-circle-outline.svg";
+import { useAuth } from "../../auth/AuthContext";
 import { useNavigate } from "react-router";
 
 export default function LandingPage() {
+  const { token } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -17,9 +19,9 @@ export default function LandingPage() {
           </p>
           <button
             className={styles.loginButton}
-            onClick={() => navigate("/login")}
+            onClick={() => navigate(token ? "/resident/dashboard" : "/login")}
           >
-            Login
+            {token ? "Dashboard" : "Login"}
           </button>
         </div>
       </div>
@@ -97,7 +99,11 @@ export default function LandingPage() {
       </div>
       <div className={styles.cta}>
         <h2>Ready to join the party?</h2>
-        <button onClick={() => navigate("/register")}>Register Now</button>
+        <button
+          onClick={() => navigate(token ? "/resident/dashboard" : "/register")}
+        >
+          {token ? "Dashboard" : "Register Now"}
+        </button>
       </div>
     </div>
   );
