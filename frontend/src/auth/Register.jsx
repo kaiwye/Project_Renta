@@ -10,6 +10,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const onRegister = async (formData) => {
     const username = formData.get("username");
@@ -19,11 +20,23 @@ export default function Register() {
     const email = formData.get("email");
     const unit = formData.get("unit");
 
+    setError(null);
+    setLoading(true);
+
     try {
-      await register({ username, password, firstName, lastName, email, unit });
+      await register({
+        username,
+        password,
+        firstName,
+        lastName,
+        email,
+        unit,
+      });
       navigate("/");
     } catch (e) {
       setError(e.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -34,30 +47,38 @@ export default function Register() {
           <h1>Register For An Account</h1>
           <form action={onRegister}>
             <label>
-              <strong>Username: </strong>
+              <span>Username: </span>
               <input type="text" name="username" required />
             </label>
             <label>
-              <strong>Password: </strong>
+              <span>Password: </span>
               <input type="password" name="password" required />
             </label>
             <label>
-              <strong>First Name: </strong>
+              <span>First Name: </span>
               <input type="text" name="firstName" required />
             </label>
             <label>
-              <strong>Last Name: </strong>
+              <span>Last Name: </span>
               <input type="text" name="lastName" required />
             </label>
             <label>
-              <strong>Email: </strong>
+              <span>Email: </span>
               <input type="email" name="email" required />
             </label>
             <label>
-              <strong>Unit: </strong>
-              <input type="number" name="unit" />
+              <span>Unit: </span>
+              <input
+                type="number"
+                name="unit"
+                min="1"
+                max="10"
+                placeholder="1"
+              />
             </label>
-            <button>Register</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Registering your account..." : "Register"}
+            </button>
             {error && <output>an error occurred, please try again</output>}
           </form>
           <Link to="/login">Already have an account? Log in here.</Link>

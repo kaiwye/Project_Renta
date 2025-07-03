@@ -48,7 +48,7 @@ export default function Login() {
               <span>Password: </span>
               <input type="password" name="password" required />
             </label>
-            <button disabled={loading}>
+            <button type="submit" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </button>
             {error && <output>{error}</output>}

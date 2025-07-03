@@ -25,11 +25,15 @@
   gap: 1rem;
 }
 
+.registerForm span {
+  font-weight: 600;
+}
+
 .registerForm input {
   padding: 0.25rem;
   border: 1px solid var(--grey-100);
   border-radius: 0.2rem;
-  width: 100%
+  width: 100%;
 }
 
 .registerForm button {
@@ -41,6 +45,11 @@
 .registerForm button:hover {
   background-color: var(--primary-color);
   color: var(--color-white);
+}
+
+.registerForm button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .registerForm a {
