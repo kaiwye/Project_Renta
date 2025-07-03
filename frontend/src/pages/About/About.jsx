@@ -9,7 +9,7 @@ export default function About() {
     <>
       <section className={styles.welcome}>
         <div className={styles.welcomeText}>
-          <h1>About Project Rent</h1>
+          <h1>About Project Renta</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             voluptas et aperiam, quo qui in vitae repellat eos temporibus.
