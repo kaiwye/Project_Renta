@@ -13,16 +13,6 @@ This web app was produced to help tenants and propety managers streamline commun
 - Multer (file uploads)
 - Node.js
 
-## Team
-
-Built by Kai Wui Ye, Matthew Sharp, Aidan Henning, Bram Cohn, and Timothee Thomance.
-
-<img src="https://github.com/user-attachments/assets/7eff463a-fc6d-4ac1-a21d-7c6ea41a2013" alt="ProfilePic" width="35%"/>
-
-<br>
-
-Feel free to connect with me via [LinkedIn](www.linkedin.com/in/kaiwye).
-
 ## Key Features
 
 **Secure authentication and role-based access**
@@ -121,3 +111,13 @@ Open a new terminal tab and run:
 cd frontend
 npm run dev
 ```
+
+## Team
+
+Built by Kai Wui Ye, Matthew Sharp, Aidan Henning, Bram Cohn, and Timothee Thomance.
+
+<img src="https://github.com/user-attachments/assets/7eff463a-fc6d-4ac1-a21d-7c6ea41a2013" alt="ProfilePic" width="35%"/>
+
+<br>
+
+Feel free to connect with me via [LinkedIn](www.linkedin.com/in/kaiwye).
