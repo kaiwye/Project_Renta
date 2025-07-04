@@ -45,7 +45,12 @@ export default function Register() {
       <div className={styles.register}>
         <div className={styles.registerForm}>
           <h1>Register For An Account</h1>
-          <form action={onRegister}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onRegister(new FormData(e.target));
+            }}
+          >
             <label>
               <span>Username: </span>
               <input type="text" name="username" required />

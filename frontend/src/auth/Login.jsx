@@ -39,7 +39,12 @@ export default function Login() {
       <div className={styles.login}>
         <div className={styles.loginForm}>
           <h1>Login</h1>
-          <form action={onLogin}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onLogin(new FormData(e.target));
+            }}
+          >
             <label>
               <span>Username: </span>
               <input type="username" name="username" required />
