@@ -114,10 +114,10 @@ npm run dev
 
 ## Team
 
-Built by [Kai Wui Ye](www.linkedin.com/in/kaiwye), [Matthew Sharp](https://www.linkedin.com/in/matthew-sharp-573811335/), [Aidan Henning](https://www.linkedin.com/in/aidanhenning/), [Bram Cohn](https://www.linkedin.com/in/bram-cohn-66bb03370/), and [Timothee Thomance](https://www.linkedin.com/in/timothee-thomance/).
+Built by [Kai Wui Ye](https://www.linkedin.com/in/kaiwye/), [Matthew Sharp](https://www.linkedin.com/in/matthew-sharp-573811335/), [Aidan Henning](https://www.linkedin.com/in/aidanhenning/), [Bram Cohn](https://www.linkedin.com/in/bram-cohn-66bb03370/), and [Timothee Thomance](https://www.linkedin.com/in/timothee-thomance/).
 
 <img src="https://github.com/user-attachments/assets/7eff463a-fc6d-4ac1-a21d-7c6ea41a2013" alt="ProfilePic" width="35%"/>
 
 <br>
 
-Feel free to connect with me via [LinkedIn](www.linkedin.com/in/kaiwye).
+Feel free to connect with me via [LinkedIn](https://www.linkedin.com/in/kaiwye/).
